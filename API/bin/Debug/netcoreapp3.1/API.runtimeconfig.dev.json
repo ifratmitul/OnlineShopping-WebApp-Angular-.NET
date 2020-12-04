@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/mitul/.dotnet/store/|arch|/|tfm|",
+      "/home/mitul/.nuget/packages"
+    ]
+  }
+}
