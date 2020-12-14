@@ -64,3 +64,7 @@
 /home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Infrastructure.pdb
 /home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Core.dll
 /home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Core.pdb
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/mono_crash.21acb2acb0.0.json
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/mono_crash.21acb2acb0.1.json
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/AutoMapper.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
