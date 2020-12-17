@@ -68,3 +68,8 @@
 /home/mitul/skinet/API/bin/Debug/netcoreapp3.1/mono_crash.21acb2acb0.1.json
 /home/mitul/skinet/API/bin/Debug/netcoreapp3.1/AutoMapper.dll
 /home/mitul/skinet/API/bin/Debug/netcoreapp3.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Microsoft.OpenApi.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.Swagger.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/mitul/skinet/API/obj/Debug/netcoreapp3.1/API.MvcApplicationPartsAssemblyInfo.cs
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerUI.dll
