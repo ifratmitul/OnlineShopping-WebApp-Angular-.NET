@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { IPagination } from './models/Pagination';
-import { IProduct } from './models/product';
+import { IPagination } from './shared/models/Pagination';
+import { IProduct } from './shared/models/product';
 
 @Component({
   selector: 'app-root',
@@ -9,22 +9,12 @@ import { IProduct } from './models/product';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'client';
+  
 
-  product: IProduct[];
-
-  constructor(private http: HttpClient ) {  }
+  constructor() {  }
 
   ngOnInit(){
 
-    this.http.get('https://localhost:5001/api/products').subscribe((response : IPagination) => 
-    {
-        console.log(response);
-        this.product = response.data;
-    }, 
-    error => 
-    {
-        console.log(error);
-    })
+
   }
 }
