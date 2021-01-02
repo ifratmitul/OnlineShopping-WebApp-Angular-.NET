@@ -9,7 +9,7 @@ namespace Core.Specification
         : base(x =>
         (string.IsNullOrEmpty(productParam.Search) || x.Name.ToLower().Contains(productParam.Search)) &&
         (!productParam.BrandId.HasValue || x.ProductBrandId == productParam.BrandId) &&
-                      !productParam.TypeId.HasValue || x.ProductTypeId == productParam.TypeId)
+                      (!productParam.TypeId.HasValue || x.ProductTypeId == productParam.TypeId))
         {
             AddInclude(x => x.ProductType);
             AddInclude(x => x.ProductBrand);
