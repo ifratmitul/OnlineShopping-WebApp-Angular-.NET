@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Basket, IBasket, IBasketItem } from '../shared/models/basket';
+import { Basket, IBasket, IBasketItem, IBasketTotals } from '../shared/models/basket';
 import { IProduct } from '../shared/models/product';
 
 @Injectable({
@@ -15,22 +15,36 @@ export class BasketService {
   private basketSource = new BehaviorSubject<IBasket> (null);
   basket$ = this.basketSource.asObservable();
 
+  private basketTotalSource = new BehaviorSubject<IBasketTotals>(null);
+  basketTotal$ = this.basketTotalSource.asObservable();
+
+
   constructor(private http: HttpClient) { }
+
+
+
+
+
+
 
   getBasket(id:string){
     return this.http.get(this.baseUrl +'basket?id=' +id)
     .pipe(
       map((basket:IBasket) => {
         this.basketSource.next(basket);
-        console.log(this.getCurrentBasketValue())
+        //console.log(this.getCurrentBasketValue())
+        this.calculateTotal();
       })
     )
   }
 
+  
+  
   setBasket(basket:IBasket){
 
     return this.http.post(this.baseUrl + 'basket', basket).subscribe((response:IBasket) =>{
-      console.log(response);
+      //console.log(response);
+      this.calculateTotal();
       this.basketSource.next(response);
       
     }, err =>{
@@ -38,16 +52,20 @@ export class BasketService {
     })
   }
 
+
+
   getCurrentBasketValue(){
     return this.basketSource.value;
   }
 
+  
   addItemtoBasket(item:IProduct, quantity=1){
     const itemToAdd : IBasketItem = this.mapProductitemToBasketItem(item, quantity); // to formate data according to IBasketItem Interface
     const basket = this.getCurrentBasketValue() ?? this.createBasket()
     basket.items = this.addOrUpdateItem(basket.items, itemToAdd,quantity)//to check if the item is same then ++ otherwise push new
   this.setBasket(basket);
   }
+  
   
   private addOrUpdateItem(items: IBasketItem[], itemToAdd: IBasketItem, quantity: number): IBasketItem[] {
 
@@ -64,12 +82,14 @@ export class BasketService {
     return items;
   }
   
+  
   private createBasket(): IBasket {
     const basket = new Basket();
     localStorage.setItem('basket_id', basket.id);
     return basket;
   }
 
+  
   private mapProductitemToBasketItem(item:IProduct, quantity : number) : IBasketItem {
     return {
       id: item.id,
@@ -80,5 +100,14 @@ export class BasketService {
       brand: item.productBrand,
       type: item.productType
     }
+  }
+
+
+  private calculateTotal(){
+    const basket = this.getCurrentBasketValue();
+    const shipping = 0;
+    const subTotal = basket.items.reduce( (res,b) => (b.price * b.quantity) + res , 0) //0 is the initiaz value of res
+    const total = subTotal + shipping;
+    this.basketTotalSource.next({shipping,subTotal, total});
   }
 }
