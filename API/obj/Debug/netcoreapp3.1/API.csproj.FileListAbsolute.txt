@@ -81,3 +81,16 @@
 /home/mitul/skinet/API/bin/Debug/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll
 /home/mitul/skinet/API/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.Diagnostics.PerformanceCounter.dll
 /home/mitul/skinet/API/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.Internal.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Identity.Core.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Identity.Stores.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Logging.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Tokens.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/home/mitul/skinet/API/bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll
