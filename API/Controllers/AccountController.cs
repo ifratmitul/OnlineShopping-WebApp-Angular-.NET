@@ -36,21 +36,16 @@ namespace API.Controllers
 
         [Authorize]
         [HttpGet]
-
         public async Task<ActionResult<UserDto>> GetCurrentUser()
         {
-
-
-
             var user = await _userManager.FindByEmailClaimsPrinciple(HttpContext.User);
 
             return new UserDto
             {
-                DisplayName = user.DisplayName,
+                Email = user.Email,
                 Token = _tokenService.CreateToken(user),
-                Email = user.Email
+                DisplayName = user.DisplayName
             };
-
         }
 
         [HttpGet("emailexists")]
@@ -118,6 +113,14 @@ namespace API.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
+
+            if (CheckEmailExistsAsync(registerDto.Email).Result.Value)
+            {
+                return new BadRequestObjectResult(new ApiValidationErrorResponse
+                {
+                    Errors = new[] { "Email address is in use" }
+                });
+            }
 
             var user = new AppUser
             {
