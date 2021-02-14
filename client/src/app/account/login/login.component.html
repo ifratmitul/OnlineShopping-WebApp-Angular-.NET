@@ -1,1 +1,41 @@
-<p>login works!</p>
+
+
+  <div class="d-flex justify-content-center mt-5">
+      <div class="col-5">
+        <form [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
+        
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+            <input formControlName="email" type="email" id="inputEmail" class="form-control mb-3" placeholder="Email address" required="" autofocus="">
+
+            <input formControlName="password" type="password" id="inputPassword" class="form-control mb-3" placeholder="Password" required="">
+           
+            <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">Sign in</button>
+           
+          </form>
+        
+      </div>
+  </div>
+
+
+  <!-- <div class="d-flex justify-content-center mt-5">
+    <div class="col-3">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="text-center mb-4">
+          <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+        </div>
+
+        <app-text-input formControlName="displayName" [label]="'Display Name'"></app-text-input>
+        <app-text-input formControlName="email" [label]="'Email Address'"></app-text-input>
+        <app-text-input formControlName="password" [label]="'Password'" [type]="'password'"></app-text-input>
+
+        <ul class="text-danger list-unstyled" *ngIf="errors">
+            <li *ngFor="let error of errors">
+                {{error}}
+            </li>
+        </ul>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+      </form>
+    </div>
+  </div>  -->
