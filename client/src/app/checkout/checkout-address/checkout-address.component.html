@@ -1,0 +1,33 @@
+<div class="mt-4" [formGroup]="checkoutForm">
+    <div class="d-flex justify-content-between align-item-center">
+        <h3>Shipping Address </h3>
+        <button class="btn btn-outline-success">Save as Default Address</button>
+    </div>
+
+    <div class="row py-4" formGroupName= "addressForm">
+        <div class="form-group col-6">
+            <app-text-input [label]="'First Name'" formControlName="firstName"></app-text-input>
+        </div>
+
+        <div class="form-group col-6">
+            <app-text-input [label]="'Last Name'" formControlName="lastName"></app-text-input>
+        </div>
+
+
+        <div class="form-group col-6">
+            <app-text-input [label]="'Street'" formControlName="street"></app-text-input>
+        </div>
+
+        <div class="form-group col-6">
+            <app-text-input [label]="'City'" formControlName="city"></app-text-input>
+        </div>
+
+        <div class="form-group col-6">
+            <app-text-input [label]="'State'" formControlName="state"></app-text-input>
+        </div>
+
+        <div class="form-group col-6">
+            <app-text-input [label]="'Zip Code'" formControlName="zipCode"></app-text-input>
+        </div>
+    </div>
+</div>
