@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AccountServiceService } from '../account/account-service.service';
 
 @Component({
   selector: 'app-checkout',
@@ -10,10 +11,11 @@ export class CheckoutComponent implements OnInit {
   checkoutForm : FormGroup;
 
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, private accountService: AccountServiceService) { }
 
   ngOnInit(): void {
     this.createCheckoutForm();
+    this.getAddressFormValues();
   }
 
 
@@ -36,6 +38,18 @@ export class CheckoutComponent implements OnInit {
         nameOnCard: [null, Validators.required]
       })
     })
+  }
+
+  getAddressFormValues(){
+    this.accountService.getUserAddress().subscribe(addr =>{
+      if(addr){
+        this.checkoutForm.get('addressForm').patchValue(addr)
+      }
+    }, err =>{
+      console.log(err);
+      
+    })
+
   }
 
 }
