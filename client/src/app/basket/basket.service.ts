@@ -166,10 +166,13 @@ setShippingPrice(deliveryMethod:IDeliveryMethod){
 
 
   private calculateTotal(){
-    const basket = this.getCurrentBasketValue();
-    const shipping = this.shipping;
-    const subTotal = basket.items.reduce( (res,b) => (b.price * b.quantity) + res , 0) //0 is the initiaz value of res
-    const total = subTotal + shipping;
-    this.basketTotalSource.next({shipping,subTotal,total});
+
+      const basket = this.getCurrentBasketValue();
+      const shipping = this.shipping;
+    
+      const subTotal = basket.items.reduce( (res,b) => (b.price * b.quantity) + res , 0) //0 is the initiaz value of res
+      const total = subTotal + shipping;
+      this.basketTotalSource.next({shipping,subTotal,total});  
+    
   }
 }
