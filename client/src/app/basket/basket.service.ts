@@ -22,7 +22,7 @@ export class BasketService {
   constructor(private http: HttpClient) { }
 
   createPaymentIntent() {
-    return this.http.post(this.baseUrl + 'payments/' + this.getCurrentBasketValue().id, {})
+    return this.http.post(this.baseUrl + 'payment/' + this.getCurrentBasketValue().id, {})
       .pipe(
         map((basket: IBasket) => {
           this.basketSource.next(basket);
