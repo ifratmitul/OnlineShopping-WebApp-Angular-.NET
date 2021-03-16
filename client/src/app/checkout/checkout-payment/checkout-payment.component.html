@@ -22,6 +22,8 @@
     <i class="fa fa-angle-left"></i> Back to Review</button>
 
 
-    <button class="btn btn-outline-primary" (click)="submitOrder()">
+    <button class="btn btn-outline-primary"
+     [disabled] = "loading || checkoutForm.get('paymentForm').invalid || !cardNumberValid || !cardCvcValid || !cardExpiryValid" (click)="submitOrder()">
        Complete<i class="fa fa-angle-right"></i></button>
+       <i *ngIf = "loading" class="fa fa-spinner fa-spin"></i>
 </div>
