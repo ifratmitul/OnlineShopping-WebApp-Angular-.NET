@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ShopService {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = environment.apiUrl;
 
   constructor(private http:HttpClient) { }
 
